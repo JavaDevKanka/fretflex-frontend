@@ -13,21 +13,21 @@
     <div class="PageButtonsWrapper">
       <router-link to="/songsLibrary" class="Navbar-link">
         <button class="Navbar-button">
-          <div class="HeaderFontParam">
+          <div class="fourteen-font">
             ВСЕ ПЕСНИ
           </div>
         </button>
       </router-link>
       <router-link to="/allGenres" class="Navbar-link">
         <button class="Navbar-button">
-          <div class="HeaderFontParam">
+          <div class="fourteen-font">
             ПО ЖАНРАМ
           </div>
         </button>
       </router-link>
       <router-link to="/allMusicians" class="Navbar-link">
         <button class="Navbar-button">
-          <div class="HeaderFontParam">
+          <div class="fourteen-font">
             ИСПОЛНИТЕЛИ
           </div>
         </button>
@@ -36,7 +36,7 @@
 
     <div class="BurgerWrapper">
       <div class="BurgerButton" @click="toggleBurgerMenu">
-        <div class="HeaderFontParam">
+        <div class="fourteen-font">
           БУРГЕР
         </div>
       </div>
@@ -103,13 +103,8 @@ export default {
   margin-right: 20px;
 }
 
-
-.HeaderFontParam {
-  font-size: 15px;
-}
-
 .TopMenuWrapper {
-  margin-top: 2%;
+  margin-top: 30px;
   display: flex;
   align-items: center;
   justify-content: space-between; /* Добавлено */

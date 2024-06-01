@@ -1,21 +1,43 @@
 <template xmlns="">
   <div class="best-songs">
     <p>ЛУЧШЕЕ</p>
-    <div class="Posts">
+    <div class="BestSongsPosts">
       <div v-if="posts.length > 0" class="split-container">
         <div class="best-post Post">
           <div class="SharpNumber"><i>#1</i></div>
           <img :src="posts[0].songPhoto" :alt="'Изображение песни не загружено!'" class="centered-image"/>
-          <div class="SongName">{{ posts[0].songName }}</div>
-          <div class="Author">{{ posts[0].authorPseudonym }}</div>
-          <div class="Genre">{{ posts[0].genre }}</div>
+          <div class="SongName">
+            <div class="seventeen-font">
+              {{ posts[0].songName }}
+            </div>
+          </div>
+          <div class="Author">
+            <div class="fourteen-font">
+              {{ posts[0].authorPseudonym }}
+            </div>
+          </div>
+          <div class="Genre">
+            <div class="seventeen-font">
+              {{ posts[0].genre }}
+            </div>
+          </div>
         </div>
         <div class="other-posts">
           <div v-for="(post, index) in posts.slice(1)" :key="index" :style="postStyle" class="post Post">
             <div class="SharpNumber"><i>#{{ index + 2 }}</i></div>
-            <div class="SongName">{{ post.songName }}</div>
-            <div class="Author">{{ post.authorPseudonym }}</div>
-            <div class="Genre">{{ post.genre }}</div>
+            <div class="SongName">
+              <div class="seventeen-font">
+                {{ post.songName }}
+              </div>
+            </div>
+            <div class="Author">
+              <div class="fourteen-font">{{ post.authorPseudonym }}</div>
+            </div>
+            <div class="Genre">
+              <div class="seventeen-font">
+                {{ post.genre }}
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -78,6 +100,12 @@ export default {
 </script>
 
 <style scoped>
+
+
+
+
+/*Прочие стили*/
+
 .best-songs {
   width: 100%;
 }
@@ -117,24 +145,24 @@ export default {
   transform: translate(-50%, -50%);
 }
 
-.SongName {
+.Author {
   padding-bottom: 3%;
   padding-left: 4%;
   align-self: flex-start;
   position: absolute;
   bottom: 5px;
   left: 5px;
-  color: rgba(255, 255, 255, 1);
+  color: rgba(136, 136, 136, 1);
 }
 
-.Author {
+.SongName {
   padding-bottom: 4%;
   padding-left: 4%;
   align-self: flex-start;
   position: absolute;
-  bottom: 25px; /* Немного выше SongName */
+  bottom: 25px;
   left: 5px;
-  color: rgba(136, 136, 136, 1);
+  color: rgba(255, 255, 255, 1);
 }
 
 .Genre {
@@ -149,9 +177,10 @@ export default {
 .SharpNumber {
   position: absolute;
   top: 5px;
-  right: 5px; /* Правый верхний угол */
+  right: 5px;
   padding-top: 4%;
   padding-right: 4%;
+  font-size: 17px;
 }
 
 .other-posts {

@@ -17,14 +17,14 @@ import Footer from "@/layouts/Footer.vue";
 <style scoped>
 .MainLayout {
   margin: 0 auto; /* Центрируем содержимое */
-  max-width: 1920px; /* Устанавливаем максимальную ширину */
+  max-width: 1760px; /* Устанавливаем максимальную ширину */
   width: 100%; /* Содержимое занимает всю доступную ширину */
   padding: 0 20px; /* Добавляем внутренние отступы для контента */
 }
 
 .SlotContainer {
-  max-width: 1920px; /* Устанавливаем максимальную ширину для слота */
-  width: 100%; /* Содержимое слота занимает всю доступную ширину */
+  max-width: 1760px;
+  width: 100%;
 }
 
 @media screen and (max-width: 1200px) {
