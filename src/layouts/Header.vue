@@ -1,43 +1,43 @@
 <template>
-  <div class="MainPage">
-    <div class="TopMenuWrapper">
-
+  <div class="TopMenuWrapper">
+    <div class="MainLogoWrapper">
       <router-link to="/" class="LogoLink">
         <img src="@/assets/icons/ico/logo.ico" alt="Логотип сайта" class="Logo"/>
       </router-link>
+    </div>
 
+    <div class="SearchWrapper">
       <input type="text" class="SearchInput" placeholder="Поиск..."/>
+    </div>
 
-      <div class="PageLink">
-        <div class="PageLink-item">
-          <router-link to="/allSongs" class="Navbar-link">
-            <button class="Navbar-button">ВСЕ ПЕСНИ</button>
-          </router-link>
-          <router-link to="/genres" class="Navbar-link">
-            <button class="Navbar-button">ЖАНРЫ</button>
-          </router-link>
-          <router-link to="/musicians" class="Navbar-link">
-            <button class="Navbar-button">ИСПОЛНИТЕЛИ</button>
-          </router-link>
+    <div class="PageButtonsWrapper">
+      <div class="PageLink-item">
+        <router-link to="/allSongs" class="Navbar-link">
+          <button class="Navbar-button">ВСЕ ПЕСНИ</button>
+        </router-link>
+        <router-link to="/allGenres" class="Navbar-link">
+          <button class="Navbar-button">ЖАНРЫ</button>
+        </router-link>
+        <router-link to="/allMusicians" class="Navbar-link">
+          <button class="Navbar-button">ИСПОЛНИТЕЛИ</button>
+        </router-link>
+      </div>
+    </div>
+
+    <div class="BurgerWrapper">
+      <div class="Navbar-button" @click="toggleBurgerMenu">БУРГЕР</div>
+      <div class="BurgerMenu" :class="{ 'active': burgerMenuActive }" ref="burgerMenu">
+        <div class="BurgerMenu-item">
+          <router-link to="/chordLibrary" class="BurgerMenu-link">Библиотека аккордов</router-link>
         </div>
-
-        <div class="Navbar-button" @click="toggleBurgerMenu">БУРГЕР</div>
-        <div class="BurgerMenu" :class="{ 'active': burgerMenuActive }" ref="burgerMenu">
-          <div class="BurgerMenu-item">
-            <router-link to="/chordsLibrary" class="BurgerMenu-link">Библиотека аккордов</router-link>
-          </div>
-          <div class="BurgerMenu-item">
-            <router-link to="/chordGenerator" class="BurgerMenu-link">Генератор аккордов</router-link>
-          </div>
-          <div class="BurgerMenu-item">
-            <router-link to="/tuner" class="BurgerMenu-link">Тюнер</router-link>
-          </div>
-          <div class="BurgerMenu-item">
-            <router-link to="/song" class="BurgerMenu-link">Пример отображения песни</router-link>
-          </div>
-          <div class="BurgerMenu-item">
-            <router-link to="/addSong" class="BurgerMenu-link">Добавить песню</router-link>
-          </div>
+        <div class="BurgerMenu-item">
+          <router-link to="/tuner" class="BurgerMenu-link">Тюнер</router-link>
+        </div>
+        <div class="BurgerMenu-item">
+          <router-link to="/exampleSong" class="BurgerMenu-link">Пример отображения песни</router-link>
+        </div>
+        <div class="BurgerMenu-item">
+          <router-link to="/addSong" class="BurgerMenu-link">Добавить песню</router-link>
         </div>
       </div>
     </div>
@@ -78,21 +78,35 @@ export default {
 
 <style scoped>
 .TopMenuWrapper {
+  margin-top: 2%;
   display: flex;
   align-items: center;
   background-color: rgba(17, 17, 17, 1);
   max-height: 75px;
-  padding-top: 3%;
-  position: relative; /* Родительский элемент должен быть относительно спозиционирован */
+  position: relative;
+  border: 1px solid rgb(255, 255, 255);
 }
 
-.TopMenuWrapper img {
-  max-height: 75px;
+.MainLogoWrapper {
+  width: 5%;
+}
+
+.MainLogoWrapper img {
+  width: 100%;
+  height: 100%;
+}
+
+.SearchWrapper {
+  width: 40%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 .SearchInput {
-  width: 35%;
-  height: 100%;
+  width: 60%;
   padding: 8px;
   border: none;
   border-radius: 4px;
@@ -100,7 +114,8 @@ export default {
   color: white;
 }
 
-.PageLink {
+
+.PageButtonsWrapper {
   display: flex;
   align-items: center;
   list-style: none;
@@ -122,6 +137,10 @@ export default {
   margin-right: 20px;
 }
 
+.BurgerWrapper {
+  position: relative;
+}
+
 .BurgerMenu {
   position: absolute; /* Меняем на absolute для позиционирования относительно родителя */
   top: 100%; /* Устанавливаем позицию под кнопкой */
@@ -139,12 +158,6 @@ export default {
   display: flex;
   opacity: 1;
   transform: translateY(0);
-}
-
-.BurgerMenu-list {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
 }
 
 .BurgerMenu-item {
