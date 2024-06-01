@@ -1,12 +1,12 @@
 <script setup>
 import MainLayout from '@/layouts/MainLayout.vue';
-import NewSongs from "@/components/BestSongs.vue";
+import BestSongs from "@/components/BestSongs.vue";
 import '@/assets/global-styles.css'
 </script>
 
 <template>
   <MainLayout>
-    <NewSongs/>
+    <BestSongs/>
   </MainLayout>
 </template>
 

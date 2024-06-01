@@ -1,7 +1,6 @@
-<template>
-  <div>
+<template xmlns="">
+  <div class="best-songs">
     <p>ЛУЧШЕЕ</p>
-    <div class="PostsWrapper">
       <div class="Posts">
         <div v-if="posts.length > 0" class="split-container">
           <div class="best-post Post">
@@ -23,7 +22,6 @@
         <p v-else>Загрузка песен...</p>
       </div>
     </div>
-  </div>
 </template>
 
 <script>
@@ -82,6 +80,11 @@ computed: {
 </script>
 
 <style scoped>
+
+.best-songs {
+  width: 100%;
+}
+
 .split-container {
   display: flex;
   width: 100%;
@@ -89,10 +92,10 @@ computed: {
 
 .best-post {
   width: 50%;
-  border-right: 2px solid black;
-  box-sizing: border-box;
   padding: 5px;
+  box-sizing: border-box;
   position: relative;
+  aspect-ratio: 1; /* Делает элемент квадратным */
 }
 
 .Post {
