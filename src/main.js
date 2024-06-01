@@ -1,6 +1,10 @@
-import './assets/main.css'
+import { createApp } from 'vue';
+import App from './FretFlex.vue';
+import router from "@/router/index.js";
 
-import { createApp } from 'vue'
-import App from './FretFlex.vue'
+const app = createApp(App)
 
-createApp(App).mount('#app')
+// Передаем маршрутизатор в приложение
+app.use(router)
+
+app.mount('#fretflex');
