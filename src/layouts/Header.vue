@@ -11,29 +11,27 @@
     </div>
 
     <div class="PageButtonsWrapper">
-      <div class="PageLink-item">
-        <router-link to="/songsLibrary" class="Navbar-link">
-          <button class="Navbar-button">
-            <div class="HeaderFontParam">
-              ВСЕ ПЕСНИ
-            </div>
-          </button>
-        </router-link>
-        <router-link to="/allGenres" class="Navbar-link">
-          <button class="Navbar-button">
-            <div class="HeaderFontParam">
-              ЖАНРЫ
-            </div>
-          </button>
-        </router-link>
-        <router-link to="/allMusicians" class="Navbar-link">
-          <button class="Navbar-button">
-            <div class="HeaderFontParam">
-              ИСПОЛНИТЕЛИ
-            </div>
-          </button>
-        </router-link>
-      </div>
+      <router-link to="/songsLibrary" class="Navbar-link">
+        <button class="Navbar-button">
+          <div class="HeaderFontParam">
+            ВСЕ ПЕСНИ
+          </div>
+        </button>
+      </router-link>
+      <router-link to="/allGenres" class="Navbar-link">
+        <button class="Navbar-button">
+          <div class="HeaderFontParam">
+            ПО ЖАНРАМ
+          </div>
+        </button>
+      </router-link>
+      <router-link to="/allMusicians" class="Navbar-link">
+        <button class="Navbar-button">
+          <div class="HeaderFontParam">
+            ИСПОЛНИТЕЛИ
+          </div>
+        </button>
+      </router-link>
     </div>
 
     <div class="BurgerWrapper">
@@ -97,6 +95,15 @@ export default {
 
 <style scoped>
 
+.Navbar-button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+
 .HeaderFontParam {
   font-size: 15px;
 }
@@ -105,10 +112,11 @@ export default {
   margin-top: 2%;
   display: flex;
   align-items: center;
+  justify-content: space-between; /* Добавлено */
+
   background-color: rgba(17, 17, 17, 1);
   max-height: 75px;
-  position: relative;
-  border: 1px solid rgb(255, 255, 255);
+  border: 1px solid rgba(128, 128, 128, 0.5);
 }
 
 .MainLogoWrapper {
@@ -117,7 +125,6 @@ export default {
 
 .MainLogoWrapper img {
   width: 100%;
-  height: 100%;
 }
 
 .SearchWrapper {
@@ -133,58 +140,66 @@ export default {
   width: 60%;
   padding: 8px;
   border: none;
-  border-radius: 4px;
+  border-radius: 20px;
   background-color: rgba(255, 255, 255, 0.1);
   color: white;
 }
 
 .PageButtonsWrapper {
-  width: 40%;
+  width: 60%;
   position: relative;
-  display: flex;
-  justify-content: space-between; /* растягиваем элементы поровну */
   align-items: center;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.PageLink-item {
-  display: flex;
-  align-items: center;
-}
-
-.Navbar-button {
-  background-color: transparent;
-  border: none;
-  color: white;
-  cursor: pointer;
-  margin-right: 20px;
+  border: 0;
+  height: 100%;
 }
 
 .BurgerWrapper {
-  width: 30%;
+  width: 5%;
   position: relative;
 }
 
 .BurgerMenu {
-  position: absolute; /* Меняем на absolute для позиционирования относительно родителя */
-  top: 100%; /* Устанавливаем позицию под кнопкой */
-  left: 0; /* Обеспечиваем, что меню будет слева относительно родителя */
+  position: absolute;
+  top: 100%;
+  left: 0;
   background-color: rgba(17, 17, 17, 1);
   display: none;
   flex-direction: column;
   opacity: 0;
   transform: translateY(-20px);
   transition: opacity 0.3s ease, transform 0.3s ease;
-  z-index: 10; /* Устанавливаем высокий z-index, чтобы меню было выше остальных элементов */
+  z-index: 10;
 }
 
 .BurgerButton {
   border: none;
-  color: white;
+  color: transparent;
   cursor: pointer;
+  width: 30px; /* Ширина кнопки */
+  height: 20px; /* Высота кнопки */
+  position: relative;
 }
+
+.BurgerButton::before,
+.BurgerButton::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px; /* Высота полоски */
+  background-color: white;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.BurgerButton::before {
+  transform: translateY(calc(-50% - 6px)); /* Расположение верхней полоски */
+}
+
+.BurgerButton::after {
+  transform: translateY(50%); /* Расположение нижней полоски */
+}
+
 
 .BurgerMenu.active {
   display: flex;
