@@ -5,7 +5,7 @@ import MainLayout from "@/layouts/MainLayout.vue";
 
 <template>
   <MainLayout>
-    <p>Страница добавления песни</p>
+    <p>ЗАГРУЗКА ПЕСНИ</p>
   </MainLayout>
 </template>
 

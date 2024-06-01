@@ -5,7 +5,7 @@ import MainLayout from "@/layouts/MainLayout.vue";
 
 <template>
   <MainLayout>
-    <p>Страница со всеми авторами</p>
+    <p>ВСЕ ИСПОЛНИТЕЛИ</p>
   </MainLayout>
 </template>
 

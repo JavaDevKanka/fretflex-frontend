@@ -5,7 +5,7 @@ import MainLayout from "@/layouts/MainLayout.vue";
 
 <template>
   <MainLayout>
-    <p>Страница Песни</p>
+    <p>СТРАНИЦА ПЕСНИ</p>
   </MainLayout>
 </template>
 

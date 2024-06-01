@@ -1,12 +1,13 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import HomePage from '@/pages/HomePage.vue';
-import AllSongsPage from "@/pages/AllSongsPage.vue";
+import AllSongsPage from "@/pages/SongsLibrary.vue";
 import AllGenresPage from "@/pages/AllGenresPage.vue";
 import AllMusiciansPage from "@/pages/AllMusiciansPage.vue";
 import ChordLibraryPage from "@/pages/ChordLibraryPage.vue";
 import TunerPage from "@/pages/TunerPage.vue";
 import SongPage from "@/pages/SongPage.vue";
 import AddSongPage from "@/pages/AddSongPage.vue";
+import SongsLibrary from "@/pages/SongsLibrary.vue";
 
 const routes = [
     {
@@ -15,9 +16,9 @@ const routes = [
         component: HomePage,
     },
     {
-        path: '/allSongs',
-        name: 'allSongs',
-        component: AllSongsPage
+        path: '/songsLibrary',
+        name: 'songsLibrary',
+        component: SongsLibrary
     },
     {
         path: '/allGenres',

@@ -5,7 +5,7 @@ import MainLayout from "@/layouts/MainLayout.vue";
 
 <template>
   <MainLayout>
-    <p>Страница библиотеки аккордов</p>
+    <p>БИБЛИОТЕКА АККОРДОВ</p>
   </MainLayout>
 </template>
 

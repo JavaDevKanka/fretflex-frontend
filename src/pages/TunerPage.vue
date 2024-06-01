@@ -5,7 +5,7 @@ import MainLayout from "@/layouts/MainLayout.vue";
 
 <template>
   <MainLayout>
-    <p>Страница тюнера</p>
+    <p>ТЮНЕР</p>
   </MainLayout>
 </template>
 

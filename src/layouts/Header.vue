@@ -12,20 +12,36 @@
 
     <div class="PageButtonsWrapper">
       <div class="PageLink-item">
-        <router-link to="/allSongs" class="Navbar-link">
-          <button class="Navbar-button">ВСЕ ПЕСНИ</button>
+        <router-link to="/songsLibrary" class="Navbar-link">
+          <button class="Navbar-button">
+            <div class="HeaderFontParam">
+              ВСЕ ПЕСНИ
+            </div>
+          </button>
         </router-link>
         <router-link to="/allGenres" class="Navbar-link">
-          <button class="Navbar-button">ЖАНРЫ</button>
+          <button class="Navbar-button">
+            <div class="HeaderFontParam">
+              ЖАНРЫ
+            </div>
+          </button>
         </router-link>
         <router-link to="/allMusicians" class="Navbar-link">
-          <button class="Navbar-button">ИСПОЛНИТЕЛИ</button>
+          <button class="Navbar-button">
+            <div class="HeaderFontParam">
+              ИСПОЛНИТЕЛИ
+            </div>
+          </button>
         </router-link>
       </div>
     </div>
 
     <div class="BurgerWrapper">
-      <div class="Navbar-button" @click="toggleBurgerMenu">БУРГЕР</div>
+      <div class="BurgerButton" @click="toggleBurgerMenu">
+        <div class="HeaderFontParam">
+          БУРГЕР
+        </div>
+      </div>
       <div class="BurgerMenu" :class="{ 'active': burgerMenuActive }" ref="burgerMenu">
         <div class="BurgerMenu-item">
           <router-link to="/chordLibrary" class="BurgerMenu-link">Библиотека аккордов</router-link>
@@ -49,6 +65,8 @@
 
 
 <script>
+import '@/assets/global-styles.css'
+
 export default {
   name: 'Layout',
   data() {
@@ -67,7 +85,8 @@ export default {
     },
     handleClickOutside(event) {
       const menu = this.$refs.burgerMenu;
-      if (menu && !menu.contains(event.target) && !event.target.classList.contains('Navbar-button')) {
+      if (menu && !menu.contains(event.target) && !event.target.closest('.BurgerButton')) {
+
         this.burgerMenuActive = false;
         document.removeEventListener('click', this.handleClickOutside);
       }
@@ -77,6 +96,11 @@ export default {
 </script>
 
 <style scoped>
+
+.HeaderFontParam {
+  font-size: 15px;
+}
+
 .TopMenuWrapper {
   margin-top: 2%;
   display: flex;
@@ -114,9 +138,11 @@ export default {
   color: white;
 }
 
-
 .PageButtonsWrapper {
+  width: 40%;
+  position: relative;
   display: flex;
+  justify-content: space-between; /* растягиваем элементы поровну */
   align-items: center;
   list-style: none;
   padding: 0;
@@ -132,12 +158,12 @@ export default {
   background-color: transparent;
   border: none;
   color: white;
-  font-size: 14px;
   cursor: pointer;
   margin-right: 20px;
 }
 
 .BurgerWrapper {
+  width: 30%;
   position: relative;
 }
 
@@ -152,6 +178,12 @@ export default {
   transform: translateY(-20px);
   transition: opacity 0.3s ease, transform 0.3s ease;
   z-index: 10; /* Устанавливаем высокий z-index, чтобы меню было выше остальных элементов */
+}
+
+.BurgerButton {
+  border: none;
+  color: white;
+  cursor: pointer;
 }
 
 .BurgerMenu.active {

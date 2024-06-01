@@ -5,7 +5,7 @@ import MainLayout from "@/layouts/MainLayout.vue";
 
 <template>
   <MainLayout>
-    <p>Страница все жанры</p>
+    <p>ВСЕ ЖАНРЫ</p>
   </MainLayout>
 </template>
 
