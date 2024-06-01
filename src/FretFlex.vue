@@ -6,8 +6,9 @@
 
 <script>
 import { ref } from 'vue';
-import Header from "@/components/Header.vue";
-import Footer from "@/components/Footer.vue";
+import Header from "@/layouts/Header.vue";
+import Footer from "@/layouts/Footer.vue";
+import '@/assets/global-styles.css'
 
 export default {
   name: "FretFlex",
@@ -19,5 +20,4 @@ export default {
 </script>
 
 <style scoped>
-/* стили для FretFlex */
 </style>

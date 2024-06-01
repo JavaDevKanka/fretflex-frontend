@@ -1,0 +1,15 @@
+body {
+    padding: 0;
+    background-color: rgba(17, 17, 17, 1);
+    margin: 0;
+    font-family: 'onest', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: white;
+}
+
+p {
+    font-size: 360%;
+}
