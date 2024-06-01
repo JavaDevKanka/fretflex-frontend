@@ -116,7 +116,7 @@ export default {
 
   background-color: rgba(17, 17, 17, 1);
   max-height: 75px;
-  border: 1px solid rgba(128, 128, 128, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .MainLogoWrapper {

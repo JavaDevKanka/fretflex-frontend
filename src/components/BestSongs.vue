@@ -1,27 +1,27 @@
 <template xmlns="">
   <div class="best-songs">
     <p>ЛУЧШЕЕ</p>
-      <div class="Posts">
-        <div v-if="posts.length > 0" class="split-container">
-          <div class="best-post Post">
-            <div class="SharpNumber"><i>#1</i></div>
-            <img :src="posts[0].songPhoto" :alt="'Изображение песни не загружено!'" />
-            <div class="SongName">{{ posts[0].songName }}</div>
-            <div class="Author">{{ posts[0].authorPseudonym }}</div>
-            <div class="Genre">{{ posts[0].genre }}</div>
-          </div>
-          <div class="other-posts">
-            <div v-for="(post, index) in posts.slice(1)" :key="index" :style="postStyle" class="post Post">
-              <div class="SharpNumber"><i>#{{ index + 2 }}</i></div>
-              <div class="SongName">{{ post.songName }}</div>
-              <div class="Author">{{ post.authorPseudonym }}</div>
-              <div class="Genre">{{ post.genre }}</div>
-            </div>
+    <div class="Posts">
+      <div v-if="posts.length > 0" class="split-container">
+        <div class="best-post Post">
+          <div class="SharpNumber"><i>#1</i></div>
+          <img :src="posts[0].songPhoto" :alt="'Изображение песни не загружено!'" class="centered-image"/>
+          <div class="SongName">{{ posts[0].songName }}</div>
+          <div class="Author">{{ posts[0].authorPseudonym }}</div>
+          <div class="Genre">{{ posts[0].genre }}</div>
+        </div>
+        <div class="other-posts">
+          <div v-for="(post, index) in posts.slice(1)" :key="index" :style="postStyle" class="post Post">
+            <div class="SharpNumber"><i>#{{ index + 2 }}</i></div>
+            <div class="SongName">{{ post.songName }}</div>
+            <div class="Author">{{ post.authorPseudonym }}</div>
+            <div class="Genre">{{ post.genre }}</div>
           </div>
         </div>
-        <p v-else>Загрузка песен...</p>
       </div>
+      <p v-else>Загрузка песен...</p>
     </div>
+  </div>
 </template>
 
 <script>
@@ -33,54 +33,51 @@ export default {
           id: 1,
           songPhoto: "media/images/star_son_image.svg",
           songName: "ЗВЕЗДА ПО ИМЕНИ СОЛНЦЕ",
-          authorPseudonym: "Кино",
+          authorPseudonym: "КИНО",
           genre: "РОК"
         },
         {
           id: 2,
           songPhoto: "media/images/ya_tak_soskuchilsya.svg",
           songName: "Я ТАК СОСКУЧИЛСЯ",
-          authorPseudonym: "Порнофильмы",
+          authorPseudonym: "ПОРНОФИЛЬМЫ",
           genre: "РОК"
         },
         {
           id: 3,
           songPhoto: "media/images/batareyka.svg",
           songName: "БАТАРЕЙКА",
-          authorPseudonym: "Жуки",
+          authorPseudonym: "ЖУКИ",
           genre: "РОК"
         },
         {
           id: 4,
           songPhoto: "media/images/lesnik.svg",
           songName: "ЛЕСНИК",
-          authorPseudonym: "Король и Шут",
+          authorPseudonym: "КОРОЛЬ И ШУТ",
           genre: "РОК"
         },
         {
           id: 5,
           songPhoto: "media/images/poteryanniy_ray.svg",
           songName: "ПОТЕРЯННЫЙ РАЙ",
-          authorPseudonym: "Ария",
+          authorPseudonym: "АРИЯ",
           genre: "РОК"
         }
       ]
     };
   },
-
-computed: {
-  postStyle() {
-    return {
-      height: `calc(100% / ${this.posts.length - 1})`
-    };
+  computed: {
+    postStyle() {
+      return {
+        height: `calc(100% / ${this.posts.length - 1})`
+      };
+    }
   }
-}
 };
-
 </script>
 
 <style scoped>
-
 .best-songs {
   width: 100%;
 }
@@ -88,6 +85,7 @@ computed: {
 .split-container {
   display: flex;
   width: 100%;
+  flex-wrap: wrap;
 }
 
 .best-post {
@@ -99,7 +97,7 @@ computed: {
 }
 
 .Post {
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   display: flex;
   flex-direction: column;
   position: relative;
@@ -112,32 +110,48 @@ computed: {
   margin: 0 auto;
 }
 
+.centered-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .SongName {
-  padding-bottom: 1%;
-  padding-left: 2%;
+  padding-bottom: 3%;
+  padding-left: 4%;
   align-self: flex-start;
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  color: rgba(255, 255, 255, 1);
 }
 
 .Author {
-  padding-bottom: 2%;
-  padding-left: 2%;
+  padding-bottom: 4%;
+  padding-left: 4%;
   align-self: flex-start;
+  position: absolute;
+  bottom: 25px; /* Немного выше SongName */
+  left: 5px;
+  color: rgba(136, 136, 136, 1);
 }
 
 .Genre {
-  padding-top: 2%;
-  padding-left: 2%;
+  padding-top: 4%;
+  padding-left: 4%;
   position: absolute;
   top: 5px;
   left: 5px;
+  color: rgba(39, 39, 39, 1);
 }
 
 .SharpNumber {
   position: absolute;
   top: 5px;
-  right: 5px;
-  padding-top: 2%;
-  padding-right: 2%;
+  right: 5px; /* Правый верхний угол */
+  padding-top: 4%;
+  padding-right: 4%;
 }
 
 .other-posts {
@@ -149,6 +163,7 @@ computed: {
 .other-posts .post {
   padding: 5px;
 }
+
 .Post img {
   width: 40%;
   height: auto;
@@ -159,5 +174,17 @@ computed: {
   position: absolute;
   top: 5px;
   right: 5px;
+  color: rgba(255, 126, 7, 1);
+}
+
+/* Адаптивный дизайн */
+@media (max-width: 768px) {
+  .best-post, .other-posts .post {
+    width: 100%;
+  }
+
+  .split-container {
+    flex-direction: column;
+  }
 }
 </style>
