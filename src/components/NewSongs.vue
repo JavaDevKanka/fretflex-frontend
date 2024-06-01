@@ -4,111 +4,112 @@ export default {
     return {
       newSongs: [
         {
-          "songName": "Путь",
-          "authorPseudonym": "Иванов",
+          "songName": "ПУТЬ",
+          "authorPseudonym": "ИВАНОВ",
           "difficultInStars": "3",
           "genre": "ПОСТ-РОК",
           "songPhoto": "path/to/photo1.jpg"
         },
         {
-          "songName": "Лето",
-          "authorPseudonym": "Петров",
+          "songName": "ЛЕТО",
+          "authorPseudonym": "ПЕТРОВ",
           "difficultInStars": "2",
           "genre": "ПОП",
           "songPhoto": "path/to/photo2.jpg"
         },
         {
-          "songName": "Осень",
-          "authorPseudonym": "Сидоров",
+          "songName": "ОСЕНЬ",
+          "authorPseudonym": "СИДОРОВ",
           "difficultInStars": "4",
           "genre": "БЛЮЗ",
           "songPhoto": "path/to/photo3.jpg"
         },
         {
-          "songName": "Зима",
-          "authorPseudonym": "Егоров",
+          "songName": "ЗИМА",
+          "authorPseudonym": "ЕГОРОВ",
           "difficultInStars": "5",
           "genre": "ДЖАЗ",
           "songPhoto": "path/to/photo4.jpg"
         },
         {
-          "songName": "Весна",
-          "authorPseudonym": "Кузнецов",
+          "songName": "ВЕСНА",
+          "authorPseudonym": "КУЗНЕЦОВ",
           "difficultInStars": "3",
           "genre": "ПОП",
           "songPhoto": "path/to/photo5.jpg"
         },
         {
-          "songName": "Рассвет",
-          "authorPseudonym": "Михайлов",
+          "songName": "РАССВЕТ",
+          "authorPseudonym": "МИХАЙЛОВ",
           "difficultInStars": "2",
           "genre": "ЭЛЕКТРОНИКА",
           "songPhoto": "path/to/photo6.jpg"
         },
         {
-          "songName": "Закат",
-          "authorPseudonym": "Алексеев",
+          "songName": "ЗАКАТ",
+          "authorPseudonym": "АЛЕКСЕЕВ",
           "difficultInStars": "4",
           "genre": "РОК",
           "songPhoto": "path/to/photo7.jpg"
         },
         {
-          "songName": "Песня дождя",
-          "authorPseudonym": "Андреев",
+          "songName": "ПЕСНЯ ДОЖДЯ",
+          "authorPseudonym": "АНДРЕЕВ",
           "difficultInStars": "3",
           "genre": "БЛЮЗ",
           "songPhoto": "path/to/photo8.jpg"
         },
         {
-          "songName": "Солнечный день",
-          "authorPseudonym": "Сергеев",
+          "songName": "СОЛНЕЧНЫЙ ДЕНЬ",
+          "authorPseudonym": "СЕРГЕЕВ",
           "difficultInStars": "2",
           "genre": "ПОП",
           "songPhoto": "path/to/photo9.jpg"
         },
         {
-          "songName": "Лунная ночь",
-          "authorPseudonym": "Николаев",
+          "songName": "ЛУННАЯ НОЧЬ",
+          "authorPseudonym": "НИКОЛАЕВ",
           "difficultInStars": "4",
           "genre": "ДЖАЗ",
           "songPhoto": "path/to/photo10.jpg"
         },
         {
-          "songName": "Танцевальная мелодия",
-          "authorPseudonym": "Дмитриев",
+          "songName": "ТАНЦЕВАЛЬНАЯ МЕЛОДИЯ",
+          "authorPseudonym": "ДМИТРИЕВ",
           "difficultInStars": "3",
           "genre": "ЭЛЕКТРОНИКА",
           "songPhoto": "path/to/photo11.jpg"
         },
         {
-          "songName": "Морская глубина",
-          "authorPseudonym": "Борисов",
+          "songName": "МОРСКАЯ ГЛУБИНА",
+          "authorPseudonym": "БОРИСОВ",
           "difficultInStars": "5",
           "genre": "ПРОГРЕССИВ-РОК",
           "songPhoto": "path/to/photo12.jpg"
         },
         {
-          "songName": "Городские огни",
-          "authorPseudonym": "Артемов",
+          "songName": "ГОРОДСКИЕ ОГНИ",
+          "authorPseudonym": "АРТЕМОВ",
           "difficultInStars": "3",
           "genre": "ЭЛЕКТРОНИКА",
           "songPhoto": "path/to/photo13.jpg"
         },
         {
-          "songName": "Звездное небо",
-          "authorPseudonym": "Игорев",
+          "songName": "ЗВЕЗДНОЕ НЕБО",
+          "authorPseudonym": "ИГОРЕВ",
           "difficultInStars": "2",
           "genre": "ПОП",
           "songPhoto": "path/to/photo14.jpg"
         },
         {
-          "songName": "Полярное сияние",
-          "authorPseudonym": "Владимиров",
+          "songName": "ПОЛЯРНОЕ СИЯНИЕ",
+          "authorPseudonym": "ВЛАДИМИРОВ",
           "difficultInStars": "4",
           "genre": "ДЖАЗ",
           "songPhoto": "path/to/photo15.jpg"
         }
       ]
+
 
     }
   }
@@ -121,16 +122,36 @@ export default {
     <div class="NewSongsPosts">
       <div class="table">
         <div class="table-header">
-          <div class="table-cell">НАЗВАНИЕ</div>
-          <div class="table-cell">ИСПОЛНИТЕЛЬ</div>
-          <div class="table-cell">СЛОЖНОСТЬ</div>
+          <div class="table-cell">
+            <div class="fourteen-font">
+              Название
+            </div>
+          </div>
+          <div class="table-cell">
+            <div class="fourteen-font">
+              Исполнитель
+            </div>
+          </div>
+          <div class="table-cell">
+            <div class="fourteen-font">
+              Сложность
+            </div>
+          </div>
         </div>
         <div v-for="(song, index) in newSongs" :key="index" class="table-row">
-          <div class="table-cell">{{ song.songName }}</div>
-          <div class="table-cell">{{ song.authorPseudonym }}</div>
+          <div class="table-cell">
+            <div class="seventeen-font">
+              {{ song.songName }}
+            </div>
+          </div>
+          <div class="table-cell">
+            <div class="seventeen-font">
+              {{ song.authorPseudonym }}
+            </div>
+          </div>
           <div class="table-cell">
             <div class="difficulty">
-              <span v-for="star in parseInt(song.difficultInStars)" :key="star" class="star"></span>
+              <span v-for="star in 5" :key="star" :class="{'star': true, 'orange-star': star <= parseInt(song.difficultInStars), 'gray-star': star > parseInt(song.difficultInStars)}"></span>
             </div>
           </div>
         </div>
@@ -152,44 +173,67 @@ export default {
 
 .table {
   width: 100%;
-  border: 1px solid rgba(255, 255, 255, 0.1); /* Границы вокруг всей таблицы */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: none;
   border-collapse: collapse;
 }
 
 .table-header {
   display: flex;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Границы между заголовками и строками */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.table-header > .table-cell {
+  border-bottom: none;
 }
 
 .table-row {
   display: flex;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Границы между строками */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .table-cell {
-  flex: 1;
-  padding: 10px;
+  padding: 20px;
+  text-align: left;
 }
 
-.table-cell:first-child {
-  flex: 2;
+.table-cell:nth-child(1),
+.table-cell:nth-child(2) {
+  width: 20%;
 }
 
-.header {
-  font-weight: bold;
+.table-cell:nth-child(3) {
+  text-align: right;
+  width: 60%;
 }
 
 .difficulty {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
 }
 
 .star {
   width: 10px;
   height: 10px;
-  background-color: rgba(255, 126, 7, 1);
   border-radius: 50%;
   margin: 0 2px;
 }
+
+.orange-star {
+  background-color: rgba(255, 126, 7, 1);
+}
+
+.gray-star {
+  background-color: rgba(136, 136, 136, 1);
+}
+
+.fourteen-font {
+  color: rgba(136, 136, 136, 1);
+}
+
+.seventeen-font {
+  font-size: 17px;
+}
 </style>
+
 
