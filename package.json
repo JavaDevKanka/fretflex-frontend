@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fontsource/alumni-sans": "^5.0.20",
     "page": "^1.11.6",
     "vue": "^3.4.21",
     "vue-router": "^4.3.2",
