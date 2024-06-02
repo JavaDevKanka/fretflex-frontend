@@ -56,7 +56,7 @@ export default {
           songPhoto: "media/images/star_son_image.svg",
           songName: "ЗВЕЗДА ПО ИМЕНИ СОЛНЦЕ",
           authorPseudonym: "КИНО",
-          genre: "РОК"
+          genre: "ПОП"
         },
         {
           id: 2,
@@ -70,21 +70,21 @@ export default {
           songPhoto: "media/images/batareyka.svg",
           songName: "БАТАРЕЙКА",
           authorPseudonym: "ЖУКИ",
-          genre: "РОК"
+          genre: "КЛАССИКА"
         },
         {
           id: 4,
           songPhoto: "media/images/lesnik.svg",
           songName: "ЛЕСНИК",
           authorPseudonym: "КОРОЛЬ И ШУТ",
-          genre: "РОК"
+          genre: "ДЖАЗ"
         },
         {
           id: 5,
           songPhoto: "media/images/poteryanniy_ray.svg",
           songName: "ПОТЕРЯННЫЙ РАЙ",
           authorPseudonym: "АРИЯ",
-          genre: "РОК"
+          genre: "ПОП"
         }
       ]
     };

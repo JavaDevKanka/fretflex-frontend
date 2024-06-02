@@ -1,10 +1,10 @@
-<template xmlns="">
+<template>
   <div class="popular-genres">
     <p>ПОПУЛЯРНЫЕ ЖАНРЫ</p>
     <div class="BestGenresPosts">
       <div v-if="posts.length > 0" class="split-container">
         <div class="popular-genre GenrePost">
-          <div class="PopularityRating"><i>(1)</i></div>
+          <div class="CountOfGenres"><i>(1)</i></div>
           <img :src="posts[0].songPhoto" :alt="'Популярные жанры не загружены!'" class="centered-image"/>
           <div class="GenreName">
             <div class="seventeen-font">
@@ -13,12 +13,25 @@
           </div>
         </div>
         <div class="other-genre-posts">
-          <div v-for="(post, index) in posts.slice(1, 5)" :key="index" class="post GenrePost">
-            <div class="PopularityRating"><i>#{{ index + 2 }}</i></div>
+          <div v-for="(post, index) in posts.slice(1, 4)" :key="index" class="post GenrePost">
+            <div class="CountOfGenres"><i>({{ index + 2 }})</i></div>
             <img :src="post.songPhoto" :alt="'Популярные жанры не загружены!'" class="centered-image"/>
             <div class="GenreName">
               <div class="seventeen-font">
                 {{ post.songName }}
+              </div>
+            </div>
+          </div>
+          <div class="post GenrePost" style="position: relative;">
+            <img src="@/assets/icons/svg/OtherGenresButton.svg" alt="Пятая иконка" class="centered-image"/>
+            <div class="arrow-container">
+              <div class="arrow-icon">
+                <img src="@/assets/icons/svg/orange_arrow.svg" alt="Стрелка"/>
+              </div>
+            </div>
+            <div class="OtherGenres">
+              <div class="seventeen-font">
+                ВСЕ ЖАНРЫ
               </div>
             </div>
           </div>
@@ -76,8 +89,6 @@ export default {
 </script>
 
 <style scoped>
-/*Прочие стили*/
-
 .popular-genres {
   width: 100%;
 }
@@ -92,8 +103,8 @@ export default {
   padding: 5px;
   box-sizing: border-box;
   position: relative;
-  aspect-ratio: 1; /* Делает элемент квадратным */
-  border: 1px solid rgba(255, 255, 255, 0.1); /* Граница для популярного жанра */
+  aspect-ratio: 1;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .GenrePost {
@@ -103,27 +114,11 @@ export default {
   height: 100%;
 }
 
-.GenrePost img {
-  width: 40%;
-  height: auto;
-  margin: 0 auto;
-}
-
 .centered-image {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
-
-.Author {
-  padding-bottom: 3%;
-  padding-left: 4%;
-  align-self: flex-start;
-  position: absolute;
-  bottom: 5px;
-  left: 5px;
-  color: rgba(136, 136, 136, 1);
 }
 
 .GenreName {
@@ -136,16 +131,36 @@ export default {
   color: rgba(255, 255, 255, 1);
 }
 
-.Genre {
-  padding-top: 4%;
+.OtherGenres {
+  padding-bottom: 4%;
   padding-left: 4%;
+  align-self: flex-start;
   position: absolute;
-  top: 5px;
-  left: 5px;
-  color: rgba(39, 39, 39, 1);
+  bottom: 25px;
+  left: 5px; /* Расположение слева */
+  color: rgba(255, 126, 7, 1);
+}
+.arrow-container {
+  position: absolute;
+  padding-right: 4%;
+  align-self: flex-end;
+  bottom: 4%;
+  width: 50px; /* Ширина контейнера равна размеру стрелки */
+  height: 50px; /* Высота контейнера равна размеру стрелки */
 }
 
-.PopularityRating {
+.arrow-icon {
+  width: 100%;
+  height: 100%;
+}
+
+.arrow-icon img {
+  width: 100%;
+  height: 100%;
+}
+
+
+.CountOfGenres {
   position: absolute;
   top: 5px;
   right: 5px;
@@ -162,11 +177,11 @@ export default {
   width: 50%;
   padding: 0;
   box-sizing: border-box;
-  border: 1px solid rgba(255, 255, 255, 0.1); /* Граница для контейнера other-genre-posts */
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .other-genre-posts .post {
-  border: 1px solid rgba(255, 255, 255, 0.1); /* Границы для каждого поста */
+  border: 1px solid rgba(255, 255, 255, 0.1);
   box-sizing: border-box;
 }
 
@@ -176,14 +191,13 @@ export default {
   object-fit: cover;
 }
 
-.GenrePost .PopularityRating {
+.GenrePost .CountOfGenres {
   position: absolute;
   top: 5px;
   right: 5px;
-  color: rgba(255, 126, 7, 1);
+  color: rgba(136, 136, 136, 1);
 }
 
-/* Адаптивный дизайн */
 @media (max-width: 768px) {
   .popular-genre, .other-genre-posts {
     width: 100%;
