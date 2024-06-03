@@ -1,6 +1,5 @@
 <template>
   <div class="popular-musicians">
-    <p>ПОПУЛЯРНЫЕ ЖАНРЫ</p>
   </div>
 </template>
 

@@ -1,3 +1,47 @@
+<template>
+  <div class="new-songs">
+    <div class="NewSongsPosts">
+      <div class="table">
+        <div class="table-header">
+          <div class="table-cell">
+            <div class="fourteen-font">
+              Название
+            </div>
+          </div>
+          <div class="table-cell">
+            <div class="fourteen-font">
+              Исполнитель
+            </div>
+          </div>
+          <div class="table-cell">
+            <div class="fourteen-font">
+              Сложность
+            </div>
+          </div>
+        </div>
+        <div v-for="(song, index) in newSongs" :key="index" class="table-row">
+          <div class="table-cell">
+            <div class="seventeen-font">
+              {{ song.songName }}
+            </div>
+          </div>
+          <div class="table-cell">
+            <div class="seventeen-font">
+              {{ song.authorPseudonym }}
+            </div>
+          </div>
+          <div class="table-cell">
+            <div class="difficulty">
+              <span v-for="star in 5" :key="star"
+                    :class="{'star': true, 'orange-star': star <= parseInt(song.difficultInStars), 'gray-star': star > parseInt(song.difficultInStars)}"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
 <script xmlns="">
 export default {
   data() {
@@ -116,49 +160,6 @@ export default {
 }
 </script>
 
-<template>
-  <div class="new-songs">
-    <p>НОВОЕ</p>
-    <div class="NewSongsPosts">
-      <div class="table">
-        <div class="table-header">
-          <div class="table-cell">
-            <div class="fourteen-font">
-              Название
-            </div>
-          </div>
-          <div class="table-cell">
-            <div class="fourteen-font">
-              Исполнитель
-            </div>
-          </div>
-          <div class="table-cell">
-            <div class="fourteen-font">
-              Сложность
-            </div>
-          </div>
-        </div>
-        <div v-for="(song, index) in newSongs" :key="index" class="table-row">
-          <div class="table-cell">
-            <div class="seventeen-font">
-              {{ song.songName }}
-            </div>
-          </div>
-          <div class="table-cell">
-            <div class="seventeen-font">
-              {{ song.authorPseudonym }}
-            </div>
-          </div>
-          <div class="table-cell">
-            <div class="difficulty">
-              <span v-for="star in 5" :key="star" :class="{'star': true, 'orange-star': star <= parseInt(song.difficultInStars), 'gray-star': star > parseInt(song.difficultInStars)}"></span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</template>
 
 <style scoped>
 .new-songs {

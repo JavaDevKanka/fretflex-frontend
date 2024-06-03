@@ -1,6 +1,5 @@
 <template>
   <div class="popular-genres">
-    <p>ПОПУЛЯРНЫЕ ЖАНРЫ</p>
     <div class="BestGenresPosts">
       <div v-if="posts.length > 0" class="split-container">
         <div class="popular-genre GenrePost">

@@ -1,51 +1,46 @@
 <template xmlns="">
-  <div class="best-songs">
-    <p>ЛУЧШЕЕ</p>
-    <div class="BestSongsPosts">
-      <div v-if="posts.length > 0" class="split-container">
-        <div class="best-post Post">
-          <div class="SharpNumber"><i>#1</i></div>
-          <div class="image-container">
-            <img :src="posts[0].songPhoto" :alt="'Изображение песни не загружено!'" class="centered-image"/>
-          </div>
-          <div class="SongName">
-            <div class="seventeen-font">
-              {{ posts[0].songName }}
-            </div>
-          </div>
-          <div class="Author">
-            <div class="fourteen-font">
-              {{ posts[0].authorPseudonym }}
-            </div>
-          </div>
-          <div class="Genre">
-            <div class="seventeen-font">
-              {{ posts[0].genre }}
-            </div>
+  <div v-if="posts.length > 0" class="split-container">
+    <div class="best-post Post">
+      <div class="SharpNumber"><i>#1</i></div>
+      <div class="image-container">
+        <img :src="posts[0].songPhoto" :alt="'Изображение песни не загружено!'" class="centered-image"/>
+      </div>
+      <div class="SongName">
+        <div class="seventeen-font">
+          {{ posts[0].songName }}
+        </div>
+      </div>
+      <div class="Author">
+        <div class="fourteen-font">
+          {{ posts[0].authorPseudonym }}
+        </div>
+      </div>
+      <div class="Genre">
+        <div class="seventeen-font">
+          {{ posts[0].genre }}
+        </div>
+      </div>
+    </div>
+    <div class="other-posts">
+      <div v-for="(post, index) in posts.slice(1)" :key="index" :style="postStyle" class="post Post">
+        <div class="SharpNumber"><i>#{{ index + 2 }}</i></div>
+        <div class="SongName">
+          <div class="seventeen-font">
+            {{ post.songName }}
           </div>
         </div>
-        <div class="other-posts">
-          <div v-for="(post, index) in posts.slice(1)" :key="index" :style="postStyle" class="post Post">
-            <div class="SharpNumber"><i>#{{ index + 2 }}</i></div>
-            <div class="SongName">
-              <div class="seventeen-font">
-                {{ post.songName }}
-              </div>
-            </div>
-            <div class="Author">
-              <div class="fourteen-font">{{ post.authorPseudonym }}</div>
-            </div>
-            <div class="Genre">
-              <div class="seventeen-font">
-                {{ post.genre }}
-              </div>
-            </div>
+        <div class="Author">
+          <div class="fourteen-font">{{ post.authorPseudonym }}</div>
+        </div>
+        <div class="Genre">
+          <div class="seventeen-font">
+            {{ post.genre }}
           </div>
         </div>
       </div>
-      <p v-else>Загрузка песен...</p>
     </div>
   </div>
+  <p v-else>Загрузка песен...</p>
 </template>
 
 <script>
@@ -104,10 +99,6 @@ export default {
 
 <style scoped>
 /* Прочие стили */
-
-.best-songs {
-  width: 100%;
-}
 
 .split-container {
   display: flex;

@@ -10,9 +10,13 @@ import PopularMusicians from "@/components/PopularMusicians.vue";
 
 <template>
   <MainLayout>
+    <p>ЛУЧШЕЕ</p>
     <BestSongs/>
+    <p>НОВОЕ</p>
     <NewSongs/>
+    <p>ПОПУЛЯРНЫЕ ЖАНРЫ</p>
     <PopularGenres/>
+    <p>ПОПУЛЯРНЫЕ ИСПОЛНИТЕЛИ</p>
     <PopularMusicians/>
   </MainLayout>
 </template>
