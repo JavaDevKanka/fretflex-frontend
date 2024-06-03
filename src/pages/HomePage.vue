@@ -4,6 +4,7 @@ import BestSongs from "@/components/BestSongs.vue";
 import '@/assets/global-styles.css'
 import NewSongs from "@/components/NewSongs.vue";
 import PopularGenres from "@/components/PopularGenres.vue";
+import PopularMusicians from "@/components/PopularMusicians.vue";
 </script>
 
 <template>
@@ -11,6 +12,7 @@ import PopularGenres from "@/components/PopularGenres.vue";
     <BestSongs/>
     <NewSongs/>
     <PopularGenres/>
+    <PopularMusicians/>
   </MainLayout>
 </template>
 

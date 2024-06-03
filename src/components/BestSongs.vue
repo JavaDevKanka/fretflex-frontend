@@ -5,7 +5,9 @@
       <div v-if="posts.length > 0" class="split-container">
         <div class="best-post Post">
           <div class="SharpNumber"><i>#1</i></div>
-          <img :src="posts[0].songPhoto" :alt="'Изображение песни не загружено!'" class="centered-image"/>
+          <div class="image-container">
+            <img :src="posts[0].songPhoto" :alt="'Изображение песни не загружено!'" class="centered-image"/>
+          </div>
           <div class="SongName">
             <div class="seventeen-font">
               {{ posts[0].songName }}
@@ -53,9 +55,10 @@ export default {
       posts: [
         {
           id: 1,
-          songPhoto: "media/images/star_son_image.svg",
+          songPhoto: "media/images/zvezda_solnce_cover.svg",
           songName: "ЗВЕЗДА ПО ИМЕНИ СОЛНЦЕ",
           authorPseudonym: "КИНО",
+          authorPhoto: "media/images/vitya_image.png",
           genre: "ПОП"
         },
         {
@@ -100,11 +103,7 @@ export default {
 </script>
 
 <style scoped>
-
-
-
-
-/*Прочие стили*/
+/* Прочие стили */
 
 .best-songs {
   width: 100%;
@@ -130,12 +129,82 @@ export default {
   flex-direction: column;
   position: relative;
   height: 100%;
+  transition: background-color 0.3s;
+}
+
+.Post:hover {
+  background-color: rgba(255, 126, 7, 1) /* Оранжевый цвет при наведении */
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-top: 100%;
+  overflow: hidden;
+}
+
+.best-post:hover .Genre {
+  color: rgba(100, 100, 100, 1);
+}
+
+.best-post:hover .Author {
+  color: rgba(6, 6, 6, 1);
+}
+
+.best-post:hover .SharpNumber {
+  color: rgba(6, 6, 6, 1);
+}
+
+.other-posts .post:hover .SongName {
+  color: rgba(6, 6, 6, 1);
+}
+
+.other-posts .post:hover .Genre {
+  color: rgba(100, 100, 100, 1);
+}
+
+.other-posts .post:hover .Author {
+  color: rgba(6, 6, 6, 1);
+}
+
+.other-posts .post:hover .SharpNumber {
+  color: rgba(6, 6, 6, 1);
+}
+
+
+.best-post:hover .image-container {
+  width: 100%;
+  padding-top: 100%;
+}
+
+.best-post:hover .image-container img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.5);
+  border-radius: 50%;
+  transition: transform 0.5s ease, border-radius 0.5s ease; /* Добавлены плавные переходы */
+}
+
+.best-post .image-container img {
+  transition: transform 0.5s ease, border-radius 0.5s ease; /* Добавлен переход для обычного состояния */
+}
+
+.best-post:hover .image-container img {
+  transform: translate(-50%, -50%) scale(1.5);
+  border-radius: 50%;
+}
+
+.best-post .image-container img {
+  transform: translate(-50%, -50%) scale(1);
+  border-radius: 0; /* Исходное состояние для обратного возврата */
 }
 
 .Post img {
-  width: 40%;
-  height: auto;
-  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .centered-image {
