@@ -5,6 +5,7 @@ import '@/assets/global-styles.css'
 import NewSongs from "@/components/NewSongs.vue";
 import PopularGenres from "@/components/PopularGenres.vue";
 import PopularMusicians from "@/components/PopularMusicians.vue";
+
 </script>
 
 <template>

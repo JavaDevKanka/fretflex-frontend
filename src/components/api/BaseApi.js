@@ -1,6 +1,6 @@
 // BaseApi.js
 import axios from "axios";
-
+const API_URL = 'http://localhost:8085/';
 const axiosInstance = axios.create({
   timeout: 9000,
 });
@@ -9,7 +9,7 @@ axiosInstance.defaults.crossDomain = true;
 
 export default class BaseApi {
   constructor(api) {
-    this.api = api;
+    this.api = API_URL + api;
   }
 
   async get(endpoint, data) {

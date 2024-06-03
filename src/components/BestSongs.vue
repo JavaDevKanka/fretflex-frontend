@@ -234,6 +234,10 @@ export default {
   color: rgba(255, 255, 255, 1);
 }
 
+.best-post:hover .SongName {
+  color: rgba(6, 6, 6, 1);
+}
+
 .Genre {
   padding-top: 4%;
   padding-left: 4%;
