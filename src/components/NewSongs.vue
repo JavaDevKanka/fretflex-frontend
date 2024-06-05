@@ -1,7 +1,7 @@
 <template>
   <div class="new-songs">
     <div class="NewSongsPosts">
-      <div class="table">
+      <div class="table-header-container">
         <div class="table-header">
           <div class="table-cell">
             <div class="fourteen-font">
@@ -19,6 +19,8 @@
             </div>
           </div>
         </div>
+      </div>
+      <div class="table">
         <div v-for="(song, index) in newSongs" :key="index" class="table-row">
           <div class="table-cell">
             <div class="seventeen-font">
@@ -34,6 +36,10 @@
             <div class="difficulty">
               <span v-for="star in 5" :key="star"
                     :class="{'star': true, 'orange-star': star <= parseInt(song.difficultInStars), 'gray-star': star > parseInt(song.difficultInStars)}"></span>
+              <div class="buttons">
+                <button class="button"><div class="eighteen-font">В коллекцию</div></button>
+                <button class="button"><div class="eighteen-font">К аккордам</div></button>
+              </div>
             </div>
           </div>
         </div>
@@ -42,7 +48,7 @@
   </div>
 </template>
 
-<script xmlns="">
+<script>
 export default {
   data() {
     return {
@@ -153,13 +159,10 @@ export default {
           "songPhoto": "path/to/photo15.jpg"
         }
       ]
-
-
     }
   }
 }
 </script>
-
 
 <style scoped>
 .new-songs {
@@ -169,33 +172,42 @@ export default {
 
 .NewSongsPosts {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.table-header-container, .table {
+  width: 100%;
+}
+
+.table-header {
+  display: flex;
+  width: 100%;
+  border: none;
 }
 
 .table {
   width: 100%;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-top: none;
   border-collapse: collapse;
-}
-
-.table-header {
-  display: flex;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.table-header > .table-cell {
-  border-bottom: none;
 }
 
 .table-row {
   display: flex;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background-color 0.3s, transform 0.3s;
 }
 
 .table-cell {
   padding: 20px;
   text-align: left;
+  border: none;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.table-header > .table-cell {
+  border-left: none;
+  border-right: none;
 }
 
 .table-cell:nth-child(1),
@@ -208,14 +220,32 @@ export default {
   width: 60%;
 }
 
+.table-row:hover {
+  background-color: rgba(255, 126, 7, 1);
+}
+
+.table-row:hover .table-cell {
+  transform: translateX(10px);
+  color: black;
+}
+
+.table-row:hover .difficulty .star {
+  display: none;
+}
+
+.table-row:hover .difficulty .buttons {
+  display: flex;
+}
+
 .difficulty {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
 }
 
 .star {
-  width: 10px;
-  height: 10px;
+  width: 15px;
+  height: 15px;
   border-radius: 50%;
   margin: 0 2px;
 }
@@ -228,6 +258,20 @@ export default {
   background-color: rgba(136, 136, 136, 1);
 }
 
+.buttons {
+  display: none;
+}
+
+.button {
+  margin-left: 10px;
+  padding: 10px 28px;
+  border: 1px solid #000000;
+  border-radius: 30px;
+  background-color: rgba(255, 126, 7, 1);
+  color: black;
+  cursor: pointer;
+}
+
 .fourteen-font {
   color: rgba(136, 136, 136, 1);
 }
@@ -235,6 +279,5 @@ export default {
 .seventeen-font {
   font-size: 17px;
 }
+
 </style>
-
-
