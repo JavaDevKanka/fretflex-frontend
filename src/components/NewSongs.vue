@@ -37,8 +37,14 @@
               <span v-for="star in 5" :key="star"
                     :class="{'star': true, 'orange-star': star <= parseInt(song.difficultInStars), 'gray-star': star > parseInt(song.difficultInStars)}"></span>
               <div class="buttons">
-                <button class="button"><div class="eighteen-font">В коллекцию</div></button>
-                <button class="button"><div class="eighteen-font">К аккордам</div></button>
+                <button class="button" @click="toggleCollection(index)">
+                  <div class="eighteen-font" :class="{'hidden': song.addedToCollection}">В коллекцию</div>
+                  <div class="eighteen-font" v-if="song.addedToCollection">Добавлено <span class="checkmark">&#x2714;</span></div>
+                </button>
+                <button class="button" @click="toggleChords(index)">
+                  <div class="eighteen-font" :class="{'hidden': song.viewedChords}">К аккордам</div>
+                  <div class="eighteen-font" v-if="song.viewedChords">Добавлено <span class="checkmark">&#x2714;</span></div>
+                </button>
               </div>
             </div>
           </div>
@@ -160,6 +166,14 @@ export default {
         }
       ]
     }
+  },
+  methods: {
+    toggleCollection(index) {
+      this.newSongs[index].addedToCollection = !this.newSongs[index].addedToCollection;
+    },
+    toggleChords(index) {
+      this.newSongs[index].viewedChords = !this.newSongs[index].viewedChords;
+    }
   }
 }
 </script>
@@ -270,14 +284,22 @@ export default {
   background-color: rgba(255, 126, 7, 1);
   color: black;
   cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
 }
 
-.fourteen-font {
-  color: rgba(136, 136, 136, 1);
+.hidden {
+  display: none;
 }
 
-.seventeen-font {
-  font-size: 17px;
+.checkmark {
+  display: inline-block;
+  margin-left: 8px;
+  font-size: 16px;
+  background-color: white;
+  color: black;
+  padding: 2px 4px;
+  border: 1px solid black;
+  border-radius: 3px;
 }
-
 </style>
