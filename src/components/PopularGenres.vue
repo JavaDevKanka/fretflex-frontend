@@ -18,11 +18,13 @@
           />
           <div class="GenreName" :class="{ 'hidden': hoverGenre === genres[0] }">
             <div class="seventeen-font">
-              {{ genres[0].genreCategory }}
+              <a :href="'/здесь будут ссылки'">{{ genres[0].genreCategory }}</a>
             </div>
           </div>
           <div v-if="hoverGenre === genres[0]" class="Subgenres">
-            <div v-for="subgenre in genres[0].subgenre" :key="subgenre">{{ subgenre }}</div>
+            <div v-for="subgenre in genres[0].subgenre" :key="subgenre">
+              <a :href="'/здесь будут ссылки'">{{ subgenre }}</a>
+            </div>
           </div>
         </div>
         <div class="other-genre-posts">
@@ -39,25 +41,25 @@
             </div>
             <div class="GenreName" :class="{ 'hidden': hoverGenre === genre }">
               <div class="seventeen-font">
-                {{ genre.genreCategory }}
+                <a :href="'/здесь будут ссылки'">{{ genre.genreCategory }}</a>
               </div>
             </div>
             <div v-if="hoverGenre === genre" class="Subgenres">
-              <div v-for="subgenre in genre.subgenre" :key="subgenre">{{ subgenre }}</div>
+              <div v-for="subgenre in genre.subgenre" :key="subgenre">
+                <a :href="'/здесь будут ссылки'">{{ subgenre }}</a>
+              </div>
             </div>
           </div>
           <div class="post GenrePost" style="position: relative;">
-            <div class="QuarterSquare">
-              <QuarterSquare />
-            </div>
+            <QuarterSquare/>
             <div class="arrow-container">
               <div class="arrow-icon">
-                <img src="@/assets/icons/svg/orange_arrow.svg" alt="Стрелка" />
+                <img src="@/assets/icons/svg/orange_arrow.svg" alt="Стрелка"/>
               </div>
             </div>
             <div class="OtherGenres">
               <div class="seventeen-font">
-                ВСЕ ЖАНРЫ
+                <a :href="'/здесь будут ссылки'">ВСЕ ЖАНРЫ</a>
               </div>
             </div>
           </div>
@@ -122,6 +124,19 @@ export default {
 
 
 <style scoped>
+
+.GenreName a, .Subgenres a, .OtherGenres a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.Subgenres a:hover {
+  padding-left: 5px; /* Или другое значение, на ваш выбор */
+  transform: translateY(-1px);
+}
+
+
+
 .popular-genres {
   width: 100%;
 }
@@ -157,6 +172,10 @@ export default {
 }
 
 .GenrePost:hover .CountOfGenres {
+  color: black;
+}
+
+.GenrePost:hover .seventeen-font {
   color: black;
 }
 
@@ -199,6 +218,7 @@ export default {
   transition: color 0.3s;
 }
 
+
 .QuarterSquare:hover ~ .OtherGenres {
   color: black;
 }
@@ -211,16 +231,6 @@ export default {
   width: 50px;
   height: 50px;
 }
-
-.QuarterSquare {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 50%; /* Устанавливаем ширину и высоту 50% для ровного центрирования */
-  height: 50%;
-}
-
 
 .arrow-icon {
   width: 100%;
