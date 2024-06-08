@@ -83,7 +83,7 @@ export default {
       genres: [
         {
           genreCategory: 'РОК',
-          genrePhoto: 'public/media/images/mockPhotos/rock_genre.svg',
+          genrePhoto: '/media/images/mockPhotos/rock_genre.svg',
           subgenre: [
             'ПОСТ-РОК',
             'ПОСТ-ПАНК',
