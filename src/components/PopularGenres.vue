@@ -47,11 +47,9 @@
             </div>
           </div>
           <div class="post GenrePost" style="position: relative;">
-            <img
-                src="@/assets/icons/svg/OtherGenresButton.svg"
-                alt="Пятая иконка"
-                class="centered-image"
-            />
+            <div class="QuarterSquare">
+              <QuarterSquare />
+            </div>
             <div class="arrow-container">
               <div class="arrow-icon">
                 <img src="@/assets/icons/svg/orange_arrow.svg" alt="Стрелка" />
@@ -71,7 +69,12 @@
 </template>
 
 <script>
+import QuarterSquare from '@/components/QuarterSquare.vue'; // Импортируйте компонент
+
 export default {
+  components: {
+    QuarterSquare, // Регистрируйте компонент для использования
+  },
   data() {
     return {
       hoverGenre: null,
@@ -116,6 +119,7 @@ export default {
   },
 };
 </script>
+
 
 <style scoped>
 .popular-genres {
@@ -192,6 +196,11 @@ export default {
   bottom: 25px;
   left: 5px;
   color: rgba(255, 126, 7, 1);
+  transition: color 0.3s;
+}
+
+.QuarterSquare:hover ~ .OtherGenres {
+  color: black;
 }
 
 .arrow-container {
@@ -202,6 +211,16 @@ export default {
   width: 50px;
   height: 50px;
 }
+
+.QuarterSquare {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%; /* Устанавливаем ширину и высоту 50% для ровного центрирования */
+  height: 50%;
+}
+
 
 .arrow-icon {
   width: 100%;
