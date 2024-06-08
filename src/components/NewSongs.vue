@@ -63,106 +63,91 @@ export default {
           "songName": "ПУТЬ",
           "authorPseudonym": "ИВАНОВ",
           "difficultInStars": "3",
-          "genre": "ПОСТ-РОК",
-          "songPhoto": "path/to/photo1.jpg"
+          "genre": "ПОСТ-РОК"
         },
         {
           "songName": "ЛЕТО",
           "authorPseudonym": "ПЕТРОВ",
           "difficultInStars": "2",
-          "genre": "ПОП",
-          "songPhoto": "path/to/photo2.jpg"
+          "genre": "ПОП"
         },
         {
           "songName": "ОСЕНЬ",
           "authorPseudonym": "СИДОРОВ",
           "difficultInStars": "4",
-          "genre": "БЛЮЗ",
-          "songPhoto": "path/to/photo3.jpg"
+          "genre": "БЛЮЗ"
         },
         {
           "songName": "ЗИМА",
           "authorPseudonym": "ЕГОРОВ",
           "difficultInStars": "5",
-          "genre": "ДЖАЗ",
-          "songPhoto": "path/to/photo4.jpg"
+          "genre": "ДЖАЗ"
         },
         {
           "songName": "ВЕСНА",
           "authorPseudonym": "КУЗНЕЦОВ",
           "difficultInStars": "3",
-          "genre": "ПОП",
-          "songPhoto": "path/to/photo5.jpg"
+          "genre": "ПОП"
         },
         {
           "songName": "РАССВЕТ",
           "authorPseudonym": "МИХАЙЛОВ",
           "difficultInStars": "2",
-          "genre": "ЭЛЕКТРОНИКА",
-          "songPhoto": "path/to/photo6.jpg"
+          "genre": "ЭЛЕКТРОНИКА"
         },
         {
           "songName": "ЗАКАТ",
           "authorPseudonym": "АЛЕКСЕЕВ",
           "difficultInStars": "4",
-          "genre": "РОК",
-          "songPhoto": "path/to/photo7.jpg"
+          "genre": "РОК"
         },
         {
           "songName": "ПЕСНЯ ДОЖДЯ",
           "authorPseudonym": "АНДРЕЕВ",
           "difficultInStars": "3",
-          "genre": "БЛЮЗ",
-          "songPhoto": "path/to/photo8.jpg"
+          "genre": "БЛЮЗ"
         },
         {
           "songName": "СОЛНЕЧНЫЙ ДЕНЬ",
           "authorPseudonym": "СЕРГЕЕВ",
           "difficultInStars": "2",
-          "genre": "ПОП",
-          "songPhoto": "path/to/photo9.jpg"
+          "genre": "ПОП"
         },
         {
           "songName": "ЛУННАЯ НОЧЬ",
           "authorPseudonym": "НИКОЛАЕВ",
           "difficultInStars": "4",
-          "genre": "ДЖАЗ",
-          "songPhoto": "path/to/photo10.jpg"
+          "genre": "ДЖАЗ"
         },
         {
           "songName": "ТАНЦЕВАЛЬНАЯ МЕЛОДИЯ",
           "authorPseudonym": "ДМИТРИЕВ",
           "difficultInStars": "3",
-          "genre": "ЭЛЕКТРОНИКА",
-          "songPhoto": "path/to/photo11.jpg"
+          "genre": "ЭЛЕКТРОНИКА"
         },
         {
           "songName": "МОРСКАЯ ГЛУБИНА",
           "authorPseudonym": "БОРИСОВ",
           "difficultInStars": "5",
-          "genre": "ПРОГРЕССИВ-РОК",
-          "songPhoto": "path/to/photo12.jpg"
+          "genre": "ПРОГРЕССИВ-РОК"
         },
         {
           "songName": "ГОРОДСКИЕ ОГНИ",
           "authorPseudonym": "АРТЕМОВ",
           "difficultInStars": "3",
-          "genre": "ЭЛЕКТРОНИКА",
-          "songPhoto": "path/to/photo13.jpg"
+          "genre": "ЭЛЕКТРОНИКА"
         },
         {
           "songName": "ЗВЕЗДНОЕ НЕБО",
           "authorPseudonym": "ИГОРЕВ",
           "difficultInStars": "2",
-          "genre": "ПОП",
-          "songPhoto": "path/to/photo14.jpg"
+          "genre": "ПОП"
         },
         {
           "songName": "ПОЛЯРНОЕ СИЯНИЕ",
           "authorPseudonym": "ВЛАДИМИРОВ",
           "difficultInStars": "4",
-          "genre": "ДЖАЗ",
-          "songPhoto": "path/to/photo15.jpg"
+          "genre": "ДЖАЗ"
         }
       ]
     }

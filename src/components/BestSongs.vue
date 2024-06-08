@@ -50,36 +50,36 @@ export default {
       posts: [
         {
           id: 1,
-          songPhoto: "media/images/zvezda_solnce_cover.svg",
+          songPhoto: "media/images/mockPhotos/zvezda_solnce_cover.svg",
           songName: "ЗВЕЗДА ПО ИМЕНИ СОЛНЦЕ",
           authorPseudonym: "КИНО",
-          authorPhoto: "media/images/vitya_image.png",
+          authorPhoto: "media/images/mockPhotos/vitya_image.png",
           genre: "ПОП"
         },
         {
           id: 2,
-          songPhoto: "media/images/ya_tak_soskuchilsya.svg",
+          songPhoto: "media/images/mockPhotos/ya_tak_soskuchilsya.svg",
           songName: "Я ТАК СОСКУЧИЛСЯ",
           authorPseudonym: "ПОРНОФИЛЬМЫ",
           genre: "РОК"
         },
         {
           id: 3,
-          songPhoto: "media/images/batareyka.svg",
+          songPhoto: "media/images/mockPhotos/batareyka.svg",
           songName: "БАТАРЕЙКА",
           authorPseudonym: "ЖУКИ",
           genre: "КЛАССИКА"
         },
         {
           id: 4,
-          songPhoto: "media/images/lesnik.svg",
+          songPhoto: "media/images/mockPhotos/lesnik.svg",
           songName: "ЛЕСНИК",
           authorPseudonym: "КОРОЛЬ И ШУТ",
           genre: "ДЖАЗ"
         },
         {
           id: 5,
-          songPhoto: "media/images/poteryanniy_ray.svg",
+          songPhoto: "media/images/mockPhotos/poteryanniy_ray.svg",
           songName: "ПОТЕРЯННЫЙ РАЙ",
           authorPseudonym: "АРИЯ",
           genre: "ПОП"

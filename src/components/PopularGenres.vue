@@ -1,24 +1,30 @@
 <template>
   <div class="popular-genres">
     <div class="BestGenresPosts">
-      <div v-if="posts.length > 0" class="split-container">
-        <div class="popular-genre GenrePost">
+      <div v-if="genres.length > 0" class="split-container">
+        <div class="popular-genre GenrePost" @mouseover="hoverGenre = genres[0]" @mouseleave="hoverGenre = null">
           <div class="CountOfGenres"><i>(1)</i></div>
-          <img :src="posts[0].songPhoto" :alt="'Популярные жанры не загружены!'" class="centered-image"/>
+          <img :src="genres[0].genrePhoto" :alt="'Популярные жанры не загружены!'" class="centered-image"/>
           <div class="GenreName">
             <div class="seventeen-font">
-              {{ posts[0].songName }}
+              {{ genres[0].genreCategory }}
             </div>
+          </div>
+          <div v-if="hoverGenre === genres[0]" class="Subgenres">
+            <div v-for="subgenre in genres[0].subgenre" :key="subgenre">{{ subgenre }}</div>
           </div>
         </div>
         <div class="other-genre-posts">
-          <div v-for="(post, index) in posts.slice(1, 4)" :key="index" class="post GenrePost">
+          <div v-for="(genre, index) in genres.slice(1, 4)" :key="index" class="post GenrePost" @mouseover="hoverGenre = genre" @mouseleave="hoverGenre = null">
             <div class="CountOfGenres"><i>({{ index + 2 }})</i></div>
-            <img :src="post.songPhoto" :alt="'Популярные жанры не загружены!'" class="centered-image"/>
+            <img :src="genre.genrePhoto" :alt="'Популярные жанры не загружены!'" class="centered-image"/>
             <div class="GenreName">
               <div class="seventeen-font">
-                {{ post.songName }}
+                {{ genre.genreCategory }}
               </div>
+            </div>
+            <div v-if="hoverGenre === genre" class="Subgenres">
+              <div v-for="subgenre in genre.subgenre" :key="subgenre">{{ subgenre }}</div>
             </div>
           </div>
           <div class="post GenrePost" style="position: relative;">
@@ -40,53 +46,67 @@
     </div>
   </div>
 </template>
-
 <script>
 export default {
   data() {
     return {
-      posts: [
+      hoverGenre: null,
+      genres: [
         {
-          id: 1,
-          songPhoto: "media/images/star_son_image.svg",
-          songName: "ЗВЕЗДА ПО ИМЕНИ СОЛНЦЕ",
-          authorPseudonym: "КИНО",
-          genre: "РОК"
+          "genreCategory": "РОК",
+          "genrePhoto": "path/to/photo1.jpg",
+          "subgenre": [
+            "ПОСТ-РОК",
+            "ПОСТ-ПАНК",
+            "ПРОГРЕССИВ-РОК",
+            "ПАНК-РОК",
+            "МЕТАЛ",
+            "ИНДИ",
+            "АЛЬТЕРНАТИВА",
+            "РОК-Н-РОЛЛ",
+            "РОК"
+          ]
         },
         {
-          id: 2,
-          songPhoto: "media/images/ya_tak_soskuchilsya.svg",
-          songName: "Я ТАК СОСКУЧИЛСЯ",
-          authorPseudonym: "ПОРНОФИЛЬМЫ",
-          genre: "РОК"
+          "genreCategory": "ПОП",
+          "genrePhoto": "path/to/photo2.jpg",
+          "subgenre": [
+            "ДИСКО",
+            "ЭЛЕКТРО-ПОП",
+            "ПОП"
+          ]
         },
         {
-          id: 3,
-          songPhoto: "media/images/batareyka.svg",
-          songName: "БАТАРЕЙКА",
-          authorPseudonym: "ЖУКИ",
-          genre: "РОК"
+          "genreCategory": "СОУЛ И ФАНК",
+          "genrePhoto": "path/to/photo3.jpg",
+          "subgenre": [
+            "СОУЛ",
+            "ФАНК"
+          ]
         },
         {
-          id: 4,
-          songPhoto: "media/images/lesnik.svg",
-          songName: "ЛЕСНИК",
-          authorPseudonym: "КОРОЛЬ И ШУТ",
-          genre: "РОК"
+          "genreCategory": "КЛАССИКА",
+          "genrePhoto": "path/to/photo4.jpg",
+          "subgenre": [
+            "ОПЕРА",
+            "КАМЕРНАЯ МУЗЫКА",
+            "СИМФОНИЯ",
+            "АКАДЕМИЧЕСКАЯ МУЗЫКА"
+          ]
         },
         {
-          id: 5,
-          songPhoto: "media/images/poteryanniy_ray.svg",
-          songName: "ПОТЕРЯННЫЙ РАЙ",
-          authorPseudonym: "АРИЯ",
-          genre: "РОК"
+          "genreCategory": "ДЖАЗ И БЛЮЗ",
+          "genrePhoto": "path/to/photo5.jpg",
+          "subgenre": [
+            "ДЖАЗ",
+            "БЛЮЗ"
+          ]
         }
       ]
     };
   }
 };
 </script>
-
 <style scoped>
 .popular-genres {
   width: 100%;
@@ -136,9 +156,10 @@ export default {
   align-self: flex-start;
   position: absolute;
   bottom: 25px;
-  left: 5px; /* Расположение слева */
+  left: 5px;
   color: rgba(255, 126, 7, 1);
 }
+
 .arrow-container {
   position: absolute;
   padding-right: 4%;
@@ -157,7 +178,6 @@ export default {
   width: 100%;
   height: 100%;
 }
-
 
 .CountOfGenres {
   position: absolute;
@@ -210,5 +230,22 @@ export default {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
   }
+}
+
+.Subgenres {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 14px;
+  padding: 10px;
+  box-sizing: border-box;
 }
 </style>
