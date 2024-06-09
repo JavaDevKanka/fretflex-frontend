@@ -136,7 +136,6 @@ export default {
 }
 
 
-
 .popular-genres {
   width: 100%;
 }
