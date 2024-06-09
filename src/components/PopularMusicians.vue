@@ -1,7 +1,7 @@
 <template>
   <div class="popular-authors">
     <div class="bestAuthorsPosts">
-      <div v-if="authors.length > 0" class="author-grid">
+      <div v-if="authors.length > 0" class="author-container">
         <div
             v-for="(author, index) in authors.slice(0, maxVisibleAuthors)"
             :key="index"
@@ -13,9 +13,7 @@
           <div class="author-square">
             <img :src="author.authorPhoto" :alt="'Популярные авторы не загружены!'" class="centered-image" />
             <div class="author-name" :class="{ 'hidden': hoverAuthor === author }">
-              <div class="seventeen-font">
-                <a :href="'/здесь будут ссылки'">{{ author.authorPseudonym }}</a>
-              </div>
+              <div class="seventeen-font">{{ author.authorPseudonym }}</div>
               <div class="description">{{ author.description }}</div>
             </div>
             <div v-if="hoverAuthor === author" class="author-details">
@@ -24,7 +22,7 @@
             </div>
           </div>
         </div>
-        <div class="author-post all-authors" @mouseover="hoverAuthor = null" @mouseleave="hoverAuthor = null">
+        <div class="author-post all-authors">
           <QuarterSquare />
           <div class="arrow-container">
             <div class="arrow-icon">
@@ -32,9 +30,7 @@
             </div>
           </div>
           <div class="other-authors">
-            <div class="seventeen-font">
-              <a :href="'/здесь будут ссылки'">ВСЕ ИСПОЛНИТЕЛИ</a>
-            </div>
+            <div class="seventeen-font">ВСЕ ИСПОЛНИТЕЛИ</div>
           </div>
         </div>
       </div>
@@ -120,17 +116,21 @@ export default {
   justify-content: center;
 }
 
-.author-grid {
+.author-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  gap: 10px;
+  gap: 0;
   width: 100%;
+  box-sizing: border-box;
 }
 
 .author-post {
   position: relative;
+  aspect-ratio: 1;
   border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
   transition: background-color 0.3s, color 0.3s;
 }
 
@@ -138,7 +138,8 @@ export default {
   background-color: rgba(255, 126, 7, 1);
 }
 
-.author-post:hover .author-name, .author-post:hover .author-details {
+.author-post:hover .author-name,
+.author-post:hover .author-details {
   color: black;
 }
 
@@ -151,14 +152,23 @@ export default {
 }
 
 .centered-image {
-  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
   height: auto;
   object-fit: cover;
   transition: transform 0.3s, border-radius 0.3s;
 }
 
 .author-name {
-  padding: 10px;
+  padding-bottom: 4%;
+  padding-left: 4%;
+  align-self: flex-start;
+  position: absolute;
+  bottom: 25px;
+  left: 5px;
   color: rgba(255, 255, 255, 1);
   transition: color 0.3s;
 }
@@ -173,23 +183,26 @@ export default {
   align-items: center;
   justify-content: center;
   position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-sizing: border-box;
 }
 
 .other-authors {
-  padding: 10px;
-  text-align: center;
+  padding-bottom: 4%;
+  padding-left: 4%;
+  align-self: flex-start;
+  position: absolute;
+  bottom: 25px;
+  left: 5px;
   color: rgba(255, 126, 7, 1);
   transition: color 0.3s;
 }
 
-.other-authors:hover {
-  color: black;
-}
-
 .arrow-container {
   position: absolute;
-  bottom: 10px;
-  right: 10px;
+  padding-right: 4%;
+  align-self: flex-end;
+  bottom: 4%;
   width: 50px;
   height: 50px;
 }
@@ -219,9 +232,27 @@ export default {
 }
 
 @media (max-width: 768px) {
-  .author-grid {
+  .author-container {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(4, 1fr);
   }
+
+  .author-post {
+    width: 100%;
+  }
+
+  .all-authors {
+    width: 100%;
+  }
+}
+
+.seventeen-font {
+  font-size: 17px;
+  color: inherit; /* Наследует цвет родителя */
+}
+
+.description {
+  font-size: 14px;
+  color: inherit; /* Наследует цвет родителя */
 }
 </style>
