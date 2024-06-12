@@ -17,16 +17,15 @@
               <div class="description">{{ author.description }}</div>
             </div>
             <div v-if="hoverAuthor === author" class="author-details">
-              <div class="rating">Рейтинг: {{ author.authorRating }}</div>
-              <div class="description">{{ author.description }}</div>
+              <div class="rating">#{{ author.authorRating }}</div>
             </div>
           </div>
         </div>
         <div class="author-post all-authors">
-          <QuarterSquare />
+          <QuarterSquare/>
           <div class="arrow-container">
             <div class="arrow-icon">
-              <img src="@/assets/icons/svg/orange_arrow.svg" alt="Стрелка" />
+              <img src="@/assets/icons/svg/orange_arrow.svg" alt="Стрелка"/>
             </div>
           </div>
           <div class="other-authors">
@@ -40,11 +39,11 @@
 </template>
 
 <script>
-import QuarterSquare from '@/components/QuarterSquare.vue'; // Импортируйте компонент
+import QuarterSquare from '@/components/QuarterSquare.vue';
 
 export default {
   components: {
-    QuarterSquare, // Регистрируйте компонент для использования
+    QuarterSquare,
   },
   data() {
     return {
@@ -248,11 +247,11 @@ export default {
 
 .seventeen-font {
   font-size: 17px;
-  color: inherit; /* Наследует цвет родителя */
+  color: inherit;
 }
 
 .description {
   font-size: 14px;
-  color: inherit; /* Наследует цвет родителя */
+  color: inherit;
 }
 </style>
