@@ -21,7 +21,7 @@
             </div>
           </div>
         </div>
-        <div class="author-post all-authors">
+        <div class="author-post all-authors" style="position: relative;">
           <QuarterSquare/>
           <div class="arrow-container">
             <div class="arrow-icon">
@@ -29,7 +29,9 @@
             </div>
           </div>
           <div class="other-authors">
-            <div class="seventeen-font">ВСЕ ИСПОЛНИТЕЛИ</div>
+            <div class="seventeen-font">
+              <a :href="'/здесь будут ссылки'">ВСЕ ИСПОЛНИТЕЛИ</a>
+            </div>
           </div>
         </div>
       </div>
@@ -230,28 +232,13 @@ export default {
   opacity: 1;
 }
 
-@media (max-width: 768px) {
-  .author-container {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-  }
-
-  .author-post {
-    width: 100%;
-  }
-
-  .all-authors {
-    width: 100%;
-  }
-}
-
-.seventeen-font {
-  font-size: 17px;
+.other-authors a {
+  text-decoration: none;
   color: inherit;
 }
 
-.description {
-  font-size: 14px;
-  color: inherit;
+.other-authors a:hover {
+  padding-left: 5px;
+  transform: translateY(-1px);
 }
 </style>
