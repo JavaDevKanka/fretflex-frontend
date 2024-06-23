@@ -22,10 +22,10 @@
           </div>
         </div>
         <div class="author-post all-authors" style="position: relative;">
-          <QuarterSquare/>
+          <QuarterSquare />
           <div class="arrow-container">
             <div class="arrow-icon">
-              <img src="@/assets/icons/svg/orange_arrow.svg" alt="Стрелка"/>
+              <img src="@/assets/icons/svg/orange_arrow.svg" alt="Стрелка" />
             </div>
           </div>
           <div class="other-authors">
@@ -137,19 +137,15 @@ export default {
 
 .author-post:hover {
   background-color: rgba(255, 126, 7, 1);
+  color: black; /* Добавлено для синхронного изменения цвета текста */
 }
 
 .author-post:hover .author-name,
-.author-post:hover .author-details {
-  color: black;
-}
-
-.author-post:hover .rating {
-  color: black;
-}
-
+.author-post:hover .description,
+.author-post:hover .author-details,
+.author-post:hover .rating,
 .author-post:hover .seventeen-font {
-  color: black;
+  color: black; /* Изменение цвета текста */
 }
 
 .centered-image {
@@ -174,8 +170,9 @@ export default {
   transition: color 0.3s;
 }
 
-.author-name.hidden {
-  display: none;
+.description {
+  color: rgba(255, 255, 255, 1);
+  transition: color 0.3s;
 }
 
 .all-authors {
@@ -222,7 +219,7 @@ export default {
   padding: 10px;
   color: white;
   font-size: 14px;
-  transition: color 0.3s, transform 0.3s;
+  transition: color 0.3s;
   transform: translateY(20px);
   opacity: 0;
 }
@@ -241,4 +238,5 @@ export default {
   padding-left: 5px;
   transform: translateY(-1px);
 }
+
 </style>
