@@ -7,7 +7,7 @@ import AddSongForm from "@/components/add-song/AddSongForm.vue";
 <template>
   <MainLayout>
     <p>ЗАГРУЗКА ПЕСНИ</p>
-    <AddSongForm/>
+<!--    <AddSongForm/>-->
   </MainLayout>
 </template>
 
