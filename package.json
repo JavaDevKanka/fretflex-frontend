@@ -10,11 +10,13 @@
   },
   "dependencies": {
     "@fontsource/alumni-sans": "^5.0.20",
+    "@mdi/font": "^7.4.47",
     "axios": "^1.7.2",
     "lodash": "^4.17.21",
     "page": "^1.11.6",
     "vue": "^3.4.21",
     "vue-router": "^4.3.2",
+    "vuetify": "^3.6.0-beta.0.0",
     "vuex": "^4.1.0"
   },
   "devDependencies": {

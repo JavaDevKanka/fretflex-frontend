@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import HomePage from '@/pages/HomePage.vue';
-import AllSongsPage from "@/pages/SongsLibrary.vue";
 import AllGenresPage from "@/pages/AllGenresPage.vue";
 import AllMusiciansPage from "@/pages/AllMusiciansPage.vue";
 import ChordLibraryPage from "@/pages/ChordLibraryPage.vue";

@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar navbar-light">
     <div class="container">
-      <H3>ПОДВАЛ</H3>
+      <h3>ПОДВАЛ</h3>
     </div>
   </nav>
 </template>
