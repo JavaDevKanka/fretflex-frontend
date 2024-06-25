@@ -59,9 +59,9 @@
 </template>
 
 <script setup>
-import { ref, watch } from 'vue';
-import axios from 'axios';
+import {ref, watch} from 'vue';
 import router from "@/router/index.js";
+import AuthorService from "@/components/api/AuthorService.js";
 
 const currentStep = ref(1);
 const inputValue = ref('');
@@ -83,7 +83,8 @@ const chordsForm = ref({
 
 const handleInput = async () => {
   try {
-    const response = await axios.post('/backend-endpoint', { query: inputValue.value });
+    const api = new AuthorService();
+    const response = await api.getAuthorByPseudonym(inputValue.value); // Передача inputValue.value в метод
     if (response.status === 200) {
       showAddButton.value = false;
     }
@@ -133,7 +134,7 @@ const nextStep = () => {
 
 const prevStep = () => {
   if (currentStep.value === 1) {
-    router.push({ path: '/' });
+    router.push({path: '/'});
   } else if (currentStep.value > 1) {
     history.value.pop();
     currentStep.value--;

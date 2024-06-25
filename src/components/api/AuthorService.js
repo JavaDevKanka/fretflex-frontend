@@ -1,7 +1,7 @@
 // AuthorService.js
 import BaseApi from '@/components/api/BaseApi';
 
-const API_ENDPOINT = 'authorOperation';
+const API_ENDPOINT = 'author';
 
 class AuthorService extends BaseApi {
     constructor() {
@@ -40,13 +40,13 @@ class AuthorService extends BaseApi {
         }
     }
 
-    async getAuthorByPseudonym(authorPseudonym) {
+    async getAuthorByPseudonym(pseudonym) {
         try {
-            return await this.get(`getAuthorByPseudonym/${authorPseudonym}`);
+            return await this.get(`by-first-letters-of/${pseudonym}`);
         } catch (error) {
             throw error;
         }
     }
 }
 
-export default new AuthorService();
+export default AuthorService;
